@@ -19,6 +19,7 @@ const tourSchema = new mongoose.Schema(
         'A tour name must be have less or equal than 40 characters'
       ]
     },
+    slug: String,
     duration: {
       type: Number,
       required: [true, 'A tour must have a duration']
@@ -104,12 +105,6 @@ const tourSchema = new mongoose.Schema(
         ref: 'User'
       }
     ]
-    // reviews: [
-    //   {
-    //     type: mongoose.Schema.ObjectId,
-    //     ref: 'Review'
-    //   }
-    // ]
   },
   {
     toJSON: { virtuals: true },

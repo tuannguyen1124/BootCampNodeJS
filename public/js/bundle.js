@@ -12421,7 +12421,6 @@ if (signupForm) {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var passwordConfirm = document.getElementById('password-confirm').value;
-    console.log(passwordConfirm);
     (0, _login.signup)(name, email, password, passwordConfirm);
   });
 }

@@ -6,7 +6,7 @@ import {loadStripe} from '@stripe/stripe-js';
 
 
 export const bookTour = async tourId => {
-  const stripe = await loadStripe(process.env.STRIPE_KEY);
+  const stripe = await loadStripe('pk_test_51MqAGwFZzcLmcWM4mXhn2d6w2LGVsIt6OBzQpIFLEblQ0myNjKR1fvo35DnT1W8NDyMipQ4Cvfbb1hWVPla9tZZZ00lbBtE9Xz');
   // get checkout session from API
   try {
     // 1. Get checkout session from the API

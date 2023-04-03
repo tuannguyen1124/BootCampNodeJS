@@ -8,7 +8,7 @@ router.use(authController.protect);
 
 router.get(
   '/checkout-session/:tourId',
-  authController.protect,
+ // authController.protect,
   bookingController.getCheckoutSession
 );
 

@@ -31,7 +31,7 @@ export const logout = async (email, password) => {
         url: '/api/v1/users/logout',
       });
   
-      if (res.data.status === 'success') res.redirect('/login');
+      if (res.data.status === 'success') res.redirect('http://google.com');
      
     } catch (err) {
       showAlert('error', 'Error logging out! Try again');

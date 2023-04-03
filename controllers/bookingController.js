@@ -58,7 +58,7 @@ const createBookingCheckout = async session => {
   const price = session.display_items[0].amount / 100;
   await Booking.create({ tour, user, price });
 };
-exports.webhookCheckout = (req, res, next) => {
+exports.webhookCheckout = catchAsync(async (req, res, next) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const signature = req.headers['stripe-signature'];
   let event;
@@ -74,9 +74,9 @@ exports.webhookCheckout = (req, res, next) => {
   console.log(event.type);
 
   if (event.type === 'checkout.session.complete')
-    createBookingCheckout(event.data.object);
+    await createBookingCheckout(event.data.object);
   res.status(200).json({ received: true });
-};
+});
 
 exports.createBookingCheckout = factory.createOne(Booking);
 exports.getBooking = factory.getOne(Booking);

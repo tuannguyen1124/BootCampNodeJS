@@ -12317,6 +12317,7 @@ var loadStripe = function loadStripe() {
 };
 exports.loadStripe = loadStripe;
 },{}],"stripe.js":[function(require,module,exports) {
+var define;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12338,7 +12339,7 @@ var bookTour = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return (0, _stripeJs.loadStripe)('pk_test_51MqAGwFZzcLmcWM4mXhn2d6w2LGVsIt6OBzQpIFLEblQ0myNjKR1fvo35DnT1W8NDyMipQ4Cvfbb1hWVPla9tZZZ00lbBtE9Xz');
+          return (0, _stripeJs.loadStripe)(undefined);
         case 2:
           stripe = _context.sent;
           _context.prev = 3;
